@@ -74,7 +74,7 @@ namespace HotelListing.API.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!(await _countriesRepository.Exists(id)))
+                if (!await _countriesRepository.Exists(id))
                 {
                     return NotFound();
                 }
